@@ -1,0 +1,131 @@
+:root {
+  --bg: #10151c;
+  --panel-bg: #1a2230;
+  --accent: #ff9900;
+  --good: #35d07f;
+  --bad: #e74c3c;
+  --text: #e8edf2;
+  --muted: #8b98a8;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #2a3444;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+}
+
+.status-pill {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-connected {
+  background: rgba(53, 208, 127, 0.15);
+  color: var(--good);
+}
+
+.status-disconnected {
+  background: rgba(231, 76, 60, 0.15);
+  color: var(--bad);
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.panel {
+  background: var(--panel-bg);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.panel h2 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.big-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+button {
+  background: var(--accent);
+  color: #1a1200;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid #2a3444;
+  font-size: 0.9rem;
+}
+
+th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+tr.best-lap td {
+  color: var(--good);
+  font-weight: 700;
+}
+
+tr.gate-online td.gate-status {
+  color: var(--good);
+}
+
+tr.gate-offline td.gate-status {
+  color: var(--bad);
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FSAE Lap Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>FSAE Lap Timer</h1>
+    <div id="connectionStatus" class="status-pill status-disconnected">connecting…</div>
+  </header>
+
+  <main>
+    <section class="panel" id="bestLapPanel">
+      <h2>Best Lap</h2>
+      <div class="big-number" id="bestLapValue">--:--.---</div>
+    </section>
+
+    <section class="panel" id="controlsPanel">
+      <h2>Session</h2>
+      <button id="resetSessionBtn">Reset Session</button>
+      <a id="downloadCsvBtn" href="/api/session/csv" download="session.csv">
+        <button type="button">Download CSV</button>
+      </a>
+    </section>
+
+    <section class="panel" id="gatesPanel">
+      <h2>Gates</h2>
+      <table id="gatesTable">
+        <thead>
+          <tr><th>Gate</th><th>Status</th><th>Battery</th><th>Last Seen</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="panel" id="lapsPanel">
+      <h2>Laps</h2>
+      <table id="lapsTable">
+        <thead>
+          <tr><th>Lap</th><th>Lap Time</th><th>Sectors</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
